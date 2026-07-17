@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    uses: cfuglestad/github-workflows/.github/workflows/node-quality.yml@main
+    with:
+      node-version: "22"
